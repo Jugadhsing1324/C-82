@@ -8,7 +8,7 @@ canvas.addEventListener("mousedown",my_mousedown);
 
 function my_mousedown(e){
     color=document.getElementById("color").value;
-    width_of_line=document.getElementById("width_line");
+    width_of_line=document.getElementById("width_line").value;
     mouseevent="mousedown";
 } 
 
@@ -22,6 +22,8 @@ function my_mousemove(e){
     ctx.strokeStyle=color;
     ctx.lineWidth=width_of_line;
     console.log("lastx="+lastx+", lasty="+lasty);
+    ctx.moveTo(lastx,lasty);
+    console.log("currentx="+currentx+",currenty"+currenty);
     ctx.lineTo(currentx,currenty);
     ctx.stroke();
     }
